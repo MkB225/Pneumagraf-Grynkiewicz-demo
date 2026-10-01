@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pneumagraf | Drukarnia Poznań</title>
+
+  <meta
+    name="description"
+    content="Pneumagraf – profesjonalne usługi poligraficzne i druk w Poznaniu."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f6f8;
+      color: #171c24;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAV */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 18px 7%;
+
+      background: rgba(17, 22, 29, 0.96);
+      backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid #333b46;
+    }
+
+    .logo {
+      color: white;
+      font-size: 21px;
+      font-weight: 950;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #ff6b35;
+    }
+
+    .nav-button {
+      background: #ff6b35;
+      color: white;
+
+      padding: 10px 18px;
+
+      border-radius: 7px;
+
+      font-weight: 900;
+
+      transition: 0.2s;
+    }
+
+    .nav-button:hover {
+      background: #ff875c;
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+
+      padding: 140px 7% 90px;
+
+      position: relative;
+      overflow: hidden;
+
+      color: white;
+
+      background:
+        radial-gradient(
+          circle at 85% 30%,
+          rgba(255, 107, 53, 0.2),
+          transparent 33%
+        ),
+        linear-gradient(
+          135deg,
+          #11161d,
+          #303945
+        );
+    }
+
+    .hero-content {
+      max-width: 850px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge {
+      display: inline-block;
+
+      color: #ff8a63;
+
+      border: 1px solid #ff6b35;
+
+      padding: 7px 15px;
+
+      border-radius: 30px;
+
+      font-size: 13px;
+      font-weight: 900;
+
+      margin-bottom: 20px;
+
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      font-size: clamp(47px, 7vw, 86px);
+
+      line-height: 0.95;
+
+      margin-bottom: 28px;
+
+      font-weight: 950;
+    }
+
+    h1 span {
+      color: #ff6b35;
+    }
+
+    .hero p {
+      color: #c5ccd4;
+
+      font-size: 19px;
+
+      max-width: 700px;
+
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+
+      padding: 15px 25px;
+
+      border-radius: 7px;
+
+      font-weight: 900;
+
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: #ff6b35;
+      color: white;
+
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: #ff875c;
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      border: 1px solid #606b78;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      border-color: #ff6b35;
+      transform: translateY(-3px);
+    }
+
+    /* PRINT DECORATION */
+
+    .paper {
+      position: absolute;
+
+      right: 8%;
+      bottom: -100px;
+
+      width: 340px;
+      height: 470px;
+
+      background: white;
+
+      opacity: 0.06;
+
+      transform: rotate(9deg);
+
+      border-radius: 8px;
+    }
+
+    .paper::before {
+      content: "";
+
+      position: absolute;
+
+      left: 45px;
+      right: 45px;
+      top: 70px;
+
+      height: 18px;
+
+      background: #ff6b35;
+
+      box-shadow:
+        0 55px 0 white,
+        0 110px 0 white,
+        0 165px 0 white;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 90px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title small {
+      color: #e25220;
+
+      font-weight: 900;
+
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-title h2 {
+      font-size: 42px;
+      margin-top: 8px;
+    }
+
+    .section-title p {
+      color: #6b747e;
+      margin-top: 10px;
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: #202831;
+      color: white;
+    }
+
+    .services .section-title p {
+      color: #aeb7c0;
+    }
+
+    .service-grid {
+      max-width: 1100px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    .service {
+      background: #29333e;
+
+      border: 1px solid #3b4652;
+
+      border-radius: 14px;
+
+      padding: 30px;
+
+      transition: 0.25s;
+    }
+
+    .service:hover {
+      transform: translateY(-6px);
+      border-color: #ff6b35;
+    }
+
+    .service-icon {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .service h3 {
+      margin-bottom: 8px;
+    }
+
+    .service p {
+      color: #b4bdc6;
+      font-size: 15px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      max-width: 1100px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 22px;
+    }
+
+    .about-box {
+      background: white;
+
+      border: 1px solid #dfe3e7;
+
+      border-radius: 14px;
+
+      padding: 34px;
+
+      box-shadow: 0 10px 30px rgba(20, 25, 30, 0.04);
+    }
+
+    .about-box h3 {
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .about-box p {
+      color: #68727c;
+    }
+
+    /* PROCESS */
+
+    .process {
+      max-width: 1100px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 20px;
+    }
+
+    .process-box {
+      background: white;
+
+      border: 1px solid #dfe3e7;
+
+      border-radius: 14px;
+
+      padding: 30px;
+
+      text-align: center;
+    }
+
+    .number {
+      width: 58px;
+      height: 58px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin: 0 auto 18px;
+
+      background: #ff6b35;
+      color: white;
+
+      border-radius: 50%;
+
+      font-size: 22px;
+      font-weight: 950;
+    }
+
+    .process-box p {
+      color: #6c767f;
+
+      margin-top: 8px;
+
+      font-size: 15px;
+    }
+
+    /* FEATURES */
+
+    .features {
+      max-width: 1100px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 18px;
+    }
+
+    .feature {
+      background: white;
+
+      border: 1px solid #dfe3e7;
+
+      border-radius: 12px;
+
+      padding: 28px 15px;
+
+      text-align: center;
+    }
+
+    .feature strong {
+      display: block;
+
+      font-size: 18px;
+
+      margin-bottom: 7px;
+    }
+
+    .feature p {
+      color: #717b84;
+
+      font-size: 14px;
+    }
+
+    /* CTA */
+
+    .contact {
+      text-align: center;
+
+      background: #ff6b35;
+
+      color: white;
+    }
+
+    .contact h2 {
+      font-size: 45px;
+      margin-bottom: 12px;
+    }
+
+    .contact p {
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .phone {
+      display: block;
+
+      font-size: clamp(30px, 5vw, 55px);
+
+      font-weight: 950;
+
+      margin-bottom: 25px;
+    }
+
+    .contact-button {
+      display: inline-block;
+
+      background: #171c24;
+      color: white;
+
+      padding: 15px 25px;
+
+      border-radius: 7px;
+
+      font-weight: 900;
+
+      transition: 0.2s;
+    }
+
+    .contact-button:hover {
+      transform: translateY(-3px);
+      background: #0c1015;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 35px 7%;
+
+      text-align: center;
+
+      background: #10151b;
+
+      color: #737e88;
+
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      nav {
+        padding: 15px 5%;
+      }
+
+      .logo {
+        font-size: 15px;
+      }
+
+      .nav-button {
+        padding: 8px 12px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 120px 6% 70px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 70px 6%;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .features {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section-title h2 {
+        font-size: 34px;
+      }
+
+      .contact h2 {
+        font-size: 34px;
+      }
+
+      .paper {
+        right: -150px;
+        bottom: -100px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+
+  <nav>
+
+    <div class="logo">
+      PNEUMA<span>GRAF</span>
+    </div>
+
+    <a
+      class="nav-button"
+      href="tel:+48618239102"
+    >
+      📞 ZADZWOŃ
+    </a>
+
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <div class="badge">
+        🖨️ Druk • Poligrafia • Realizacja
+      </div>
+
+      <h1>
+        Twój pomysł.
+        <br>
+        <span>Nasz druk.</span>
+      </h1>
+
+      <p>
+        Profesjonalne rozwiązania poligraficzne dla firm,
+        marek i klientów indywidualnych. Od projektu
+        po gotowy materiał.
+      </p>
+
+      <div class="buttons">
+
+        <a
+          class="btn btn-primary"
+          href="tel:+48618239102"
+        >
+          📞 SKONTAKTUJ SIĘ
+        </a>
+
+        <a
+          class="btn btn-secondary"
+          href="#oferta"
+        >
+          🖨️ POZNAJ OFERTĘ
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="paper"></div>
+
+  </header>
+
+
+  <!-- SERVICES -->
+
+  <section
+    class="services"
+    id="oferta"
+  >
+
+    <div class="section-title">
+
+      <small>Oferta</small>
+
+      <h2>Rozwiązania poligraficzne</h2>
+
+      <p>
+        Zakres realizacji ustalany indywidualnie
+        z każdym klientem.
+      </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+      <div class="service">
+
+        <div class="service-icon">
+          🖨️
+        </div>
+
+        <h3>Druk</h3>
+
+        <p>
+          Materiały drukowane dopasowane
+          do potrzeb klienta.
+        </p>
+
+      </div>
+
+
+      <div class="service">
+
+        <div class="service-icon">
+          📄
+        </div>
+
+        <h3>Materiały reklamowe</h3>
+
+        <p>
+          Drukowane materiały wspierające
+          promocję firmy lub marki.
+        </p>
+
+      </div>
+
+
+      <div class="service">
+
+        <div class="service-icon">
+          🎨
+        </div>
+
+        <h3>Projekty graficzne</h3>
+
+        <p>
+          Przygotowanie materiałów
+          do profesjonalnego druku.
+        </p>
+
+      </div>
+
+
+      <div class="service">
+
+        <div class="service-icon">
+          📦
+        </div>
+
+        <h3>Materiały firmowe</h3>
+
+        <p>
+          Rozwiązania poligraficzne
+          dla biznesu.
+        </p>
+
+      </div>
+
+
+      <div class="service">
+
+        <div class="service-icon">
+          🏷️
+        </div>
+
+        <h3>Materiały promocyjne</h3>
+
+        <p>
+          Produkty wspierające
+          komunikację marki.
+        </p>
+
+      </div>
+
+
+      <div class="service">
+
+        <div class="service-icon">
+          🤝
+        </div>
+
+        <h3>Współpraca B2B</h3>
+
+        <p>
+          Indywidualne podejście
+          do potrzeb firm.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section>
+
+    <div class="section-title">
+
+      <small>Pneumagraf</small>
+
+      <h2>Druk, który reprezentuje Twoją markę</h2>
+
+      <p>
+        Dobrze przygotowany materiał drukowany
+        może być ważnym elementem wizerunku firmy.
+      </p>
+
+    </div>
+
+
+    <div class="about">
+
+      <div class="about-box">
+
+        <h3>🎨 Wizerunek firmy</h3>
+
+        <p>
+          Wizytówki, materiały reklamowe i inne
+          produkty poligraficzne pomagają budować
+          profesjonalny wizerunek marki.
+        </p>
+
+      </div>
+
+
+      <div class="about-box">
+
+        <h3>📐 Dopasowanie do projektu</h3>
+
+        <p>
+          Każdy projekt może wymagać innego
+          formatu, materiału lub sposobu realizacji.
+          Warto omówić szczegóły przed zamówieniem.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROCESS -->
+
+  <section>
+
+    <div class="section-title">
+
+      <small>Współpraca</small>
+
+      <h2>Od pomysłu do gotowego materiału</h2>
+
+    </div>
+
+
+    <div class="process">
+
+      <div class="process-box">
+
+        <div class="number">
+          1
+        </div>
+
+        <h3>Pomysł</h3>
+
+        <p>
+          Przedstaw swój projekt
+          i potrzeby.
+        </p>
+
+      </div>
+
+
+      <div class="process-box">
+
+        <div class="number">
+          2
+        </div>
+
+        <h3>Ustalenia</h3>
+
+        <p>
+          Dobór odpowiedniego rozwiązania
+          i szczegółów realizacji.
+        </p>
+
+      </div>
+
+
+      <div class="process-box">
+
+        <div class="number">
+          3
+        </div>
+
+        <h3>Realizacja</h3>
+
+        <p>
+          Przygotowanie i realizacja
+          zamówienia.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FEATURES -->
+
+  <section>
+
+    <div class="section-title">
+
+      <small>Informacje</small>
+
+      <h2>Pneumagraf Gryniewicz K</h2>
+
+    </div>
+
+
+    <div class="features">
+
+      <div class="feature">
+
+        <strong>🖨️ Druk</strong>
+
+        <p>
+          Usługi poligraficzne.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <strong>🎨 Poligrafia</strong>
+
+        <p>
+          Materiały dla firm.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <strong>📍 Poznań</strong>
+
+        <p>
+          Naramowicka 28
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <strong>📞 Kontakt</strong>
+
+        <p>
+          61 823 91 02
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact">
+
+    <h2>
+      Potrzebujesz profesjonalnego druku?
+    </h2>
+
+    <p>
+      Skontaktuj się i omów swoje zamówienie.
+    </p>
+
+    <a
+      class="phone"
+      href="tel:+48618239102"
+    >
+      61 823 91 02
+    </a>
+
+    <a
+      class="contact-button"
+      href="tel:+48618239102"
+    >
+      📞 ZADZWOŃ TERAZ
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <strong>
+      Pneumagraf Gryniewicz K
+    </strong>
+
+    <br>
+
+    Naramowicka 28, Poznań
+
+    <br><br>
+
+    © 2026 — Demo strony internetowej
+
+  </footer>
+
+</body>
+</html>
